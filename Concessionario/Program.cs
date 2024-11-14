@@ -6,7 +6,7 @@ Veiculo cam = new Caminhao("Carreta", 1990, 170, 2.2, 2000);
 
 
 double cons = car.CalcularConsumo(20);
-Console.WriteLine(cons);
+Console.WriteLine(cons);   
 double consu = cam.CalcularConsumo(20);
 Console.WriteLine(consu);
 
