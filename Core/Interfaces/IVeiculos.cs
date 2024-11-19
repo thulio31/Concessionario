@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concessionario
+namespace Core.Interfaces
 {
     public interface IVeiculos
     {
-        void ExibirDetalhes();
+        string ExibirDetalhes();
         double CalcularConsumo(double distancia);
     }
 }

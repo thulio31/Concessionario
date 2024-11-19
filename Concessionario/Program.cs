@@ -1,4 +1,5 @@
 ﻿using Concessionario;
+using Core.Interfaces;
 
 Veiculo car = new Carro("Honda City", 2017, 70, 1.2, "SUV");
 

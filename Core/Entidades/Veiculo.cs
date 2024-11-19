@@ -1,4 +1,5 @@
-﻿using System;
+﻿    using Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +22,15 @@ namespace Concessionario
             ConsumoPorKm = consumoPorKm;
         }
 
-        public virtual void ExibirDetalhes()
+        public virtual string ExibirDetalhes()
         {
-            Console.WriteLine("=-=-=-=-=-=-=-=-=- Detalhes -=-=-=-=-=-=-=-=-=-");
-            Console.WriteLine($"Modelo: {Modelo}");
-            Console.WriteLine($"Ano: {Ano}");
-            Console.WriteLine($"Capacidade do Tanque: {CapacidadeTanque} lts");
-            Console.WriteLine($"Consumo por Km: {ConsumoPorKm} km");
+            string mensagemExibirDetalhes = $"=-=-=-=-=-=-=-=-=- Detalhes -=-=-=-=-=-=-=-=-=-" +
+                $"\nModelo: {Modelo}" +
+                $"\nAno: {Ano}" +
+                $"\nCapacidade do Tanque: {CapacidadeTanque} lts" +
+                $"\nConsumo por Km: {ConsumoPorKm} km";
+
+            return mensagemExibirDetalhes;
         }
 
         public virtual double CalcularConsumo(double distancia)

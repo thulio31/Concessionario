@@ -15,10 +15,11 @@ namespace Concessionario
         {
             CapacidadeCarga = capacidadeCarga;
         }
-        public override void ExibirDetalhes()
+        public override string ExibirDetalhes()
         {
-            base.ExibirDetalhes();
-            Console.WriteLine($"CapacidadeCarga : {CapacidadeCarga} toneladas");
+            string mensagemDetalhes = base.ExibirDetalhes();
+            mensagemDetalhes += $"CapacidadeCarga : {CapacidadeCarga} toneladas";
+            return mensagemDetalhes;
         }
 
         public override double CalcularConsumo(double distancia)

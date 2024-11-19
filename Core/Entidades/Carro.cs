@@ -15,10 +15,11 @@ namespace Concessionario
         {
             Tipo= tipo;
         }  
-        public override void ExibirDetalhes()
+        public override string ExibirDetalhes()
         {
-            base.ExibirDetalhes();
-            Console.WriteLine($"Tipo : {Tipo}");
+            string mensagenDetalhes = base.ExibirDetalhes();
+            mensagenDetalhes += $"Tipo : {Tipo}";
+            return mensagenDetalhes;
         }
 
         public override double CalcularConsumo(double distancia)
