@@ -37,7 +37,7 @@ namespace Core._02Repository
             using var connection = new SQLiteConnection(ConnectionString); 
             connection.Update<Carro>(carro);
         }
-        public void Delete(int id)
+        public void Remover(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString); 
             Carro novocarro = Buscar(id);
