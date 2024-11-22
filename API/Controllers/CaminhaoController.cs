@@ -1,4 +1,5 @@
-﻿using Concessionario;
+﻿using AutoMapper;
+using Concessionario;
 using Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,20 @@ namespace API.Controllers
         public void DeletarCaminhao(int id)
         {
             _service.Remover(id);
+
+        }
+
+        /// <summary>
+        /// endpoit que edita um caminhao por id inserido
+        /// </summary>
+        /// <param name="caminhao"></param>
+        /// <returns></returns>
+        [HttpPut("Editar-Carro")]// Rota (EndPoint)
+        public void EditarCarro(Caminhao caminhao)
+        {
+
+            _service.Editar(caminhao);
+
         }
     }
 }

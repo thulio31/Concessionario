@@ -1,9 +1,13 @@
-﻿using Concessionario;
+﻿using AutoMapper;
+using Concessionario;
 using Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")] //DataNotation
+
     public class CarroController : ControllerBase
     {
         private readonly ICarroService _service;
