@@ -1,4 +1,7 @@
+using Core._01Service;
 using Core.Data;
+using Core.Interfaces.Repository;
+using Core.Interfaces.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,13 @@ builder.Services.AddSwaggerGen();
 InicializadorBD.Inializador();
 InicializadorBD.Inializador();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+//Carro
+builder.Services.AddScoped<ICarroRepository, CarroRepository>();
+builder.Services.AddScoped<ICarroService, CarroService>();
+//Caminhao
+builder.Services.AddScoped<ICaminhaoService, CaminhaoService>();
+builder.Services.AddScoped<ICaminhaoRepository, CaminhaoRepository>();
 
 var app = builder.Build();
 

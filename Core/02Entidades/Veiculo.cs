@@ -9,17 +9,24 @@ namespace Concessionario
 {
     public class Veiculo : IVeiculos
     {
+        public int Id { get; set; }
         public string Modelo { get; set; }
         public int Ano { get; set; }
         public double CapacidadeTanque { get; set; }
         public double ConsumoPorKm { get; set; }
 
+
         public Veiculo(string modelo, int ano, double capacidadeTanque, double consumoPorKm)
-        {
+        {            
             Modelo = modelo;
             Ano = ano;
             CapacidadeTanque = capacidadeTanque;
             ConsumoPorKm = consumoPorKm;
+        }
+
+        public Veiculo() 
+        {
+        
         }
 
         public virtual string ExibirDetalhes()

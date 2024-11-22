@@ -1,5 +1,4 @@
 ﻿using Concessionario;
-using Core._02Repository.Interfaces;
 using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core._02Repository
+namespace Core.Interfaces.Repository
 {
     public class CaminhaoRepository : ICaminhaoRepository
     {
@@ -23,7 +22,7 @@ namespace Core._02Repository
         public void Adicionar(Caminhao caminhao)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            connection.Insert<Caminhao>(caminhao);
+            connection.Insert(caminhao);
         }
 
         public List<Caminhao> Listar()
@@ -34,14 +33,14 @@ namespace Core._02Repository
 
         public void Editar(Caminhao caminhao)
         {
-            using var connection = new SQLiteConnection(ConnectionString); 
+            using var connection = new SQLiteConnection(ConnectionString);
             connection.Update<Caminhao>(caminhao);
         }
         public void Delete(int id)
         {
-            using var connection = new SQLiteConnection(ConnectionString); 
-            Caminhao novocaminhao = Buscar(id); 
-            connection.Delete<Caminhao>(novocaminhao);
+            using var connection = new SQLiteConnection(ConnectionString);
+            Caminhao novocaminhao = Buscar(id);
+            connection.Delete(novocaminhao);
         }
 
         public Caminhao Buscar(int id)

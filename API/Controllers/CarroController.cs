@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Concessionario;
-using Core._01Service;
+using Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -11,30 +11,27 @@ namespace API.Controllers
     public class CarroController : ControllerBase
     {
         private readonly ICarroService _service;
-        private readonly IMapper _mapper;
-        public CarroController(IConfiguration config, IMapper mapper, ICarroService service)
+        public CarroController(IConfiguration config, ICarroService carroService)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _service = service;
-            _mapper = mapper;
+            _service = carroService;
         }
-        [HttpPost("adicionar-carro")]
-        public void AdicionarAluno(Carro carroDTO)
+        [HttpPost("adicionar-Carro")]
+        public void AdicionarCarro(Carro Carro)
         {
-            Carro carro = _mapper.Map<Carro>(carroDTO);
-            _service.Adicionar(carro);
+            _service.Adicionar(Carro);
         }
-        [HttpGet("listar-produto")]
+        [HttpGet("listar-Carro")]
         public List<Carro> ListarCarro()
         {
             return _service.Listar();
         }
-        [HttpPut("editar-carro")]
-        public void EditarProduto(Carro c)
+        [HttpPut("editar-Carro")]
+        public void EditarCarro(Carro p)
         {
-            _service.Editar(c);
+            _service.Editar(p);
         }
-        [HttpDelete("deletar-carro")]
+        [HttpDelete("deletar-Carro")]
         public void DeletarCarro(int id)
         {
             _service.Remover(id);

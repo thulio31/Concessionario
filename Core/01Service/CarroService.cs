@@ -1,5 +1,6 @@
 ﻿using Concessionario;
-using Core._02Repository.Interfaces;
+using Core.Interfaces.Repository;
+using Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,32 +11,35 @@ namespace Core._01Service
 {
     public class CarroService : ICarroService
     {
-        public ICarroRepository repository { get; set; }
+        private readonly ICarroRepository repository;
         public CarroService(ICarroRepository _repository)
         {
             repository = _repository;
         }
+
         public void Adicionar(Carro carro)
         {
             repository.Adicionar(carro);
         }
 
-        public void Remover(int id)
+        public Carro BuscarPorId(int id)
         {
-            repository.Remover(id);
+            return repository.Buscar(id);
+        }
+
+        public void Editar(Carro carro)
+        {
+            repository.Editar(carro);
         }
 
         public List<Carro> Listar()
         {
             return repository.Listar();
         }
-        public Carro BuscarTimePorId(int id)
+
+        public void Remover(int id)
         {
-            return repository.BuscarPorId(id);
-        }
-        public void Editar(Carro editcar)
-        {
-            repository.Editar(editcar);
+            repository.Delete(id);
         }
     }
 }

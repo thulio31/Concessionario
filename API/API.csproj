@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Concessionario\Concessionario.csproj" />
+    <ProjectReference Include="..\Concessionario\FrontEnd.csproj" />
   </ItemGroup>
 
 </Project>

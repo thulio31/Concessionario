@@ -1,5 +1,6 @@
 ﻿using Concessionario;
-using Core._02Repository.Interfaces;
+using Core.Interfaces.Repository;
+using Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,7 @@ namespace Core._01Service
 {
     public class CaminhaoService : ICaminhaoService
     {
-        public readonly ICaminhaoRepository repository;
-
+        private readonly ICaminhaoRepository repository;
         public CaminhaoService(ICaminhaoRepository _repository)
         {
             repository = _repository;
@@ -22,9 +22,9 @@ namespace Core._01Service
             repository.Adicionar(caminhao);
         }
 
-        public void Remover(int id)
+        public Caminhao BuscarPorId(int id)
         {
-            repository.Delete(id);
+            return repository.Buscar(id);
         }
 
         public void Editar(Caminhao caminhao)
@@ -37,9 +37,9 @@ namespace Core._01Service
             return repository.Listar();
         }
 
-        public Caminhao BuscarCaminhaoPorId(int id)
+        public void Remover(int id)
         {
-            return repository.Buscar(id);
+            repository.Delete(id);
         }
     }
 }
