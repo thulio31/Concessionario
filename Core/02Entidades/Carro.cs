@@ -14,7 +14,13 @@ namespace Concessionario
             : base(modelo, ano, capacidadeTanque,consumoPorKm) 
         {
             Tipo= tipo;
-        }  
+        }
+
+        public Carro()
+            : base()
+        {
+                
+        }
         public override string ExibirDetalhes()
         {
             string mensagenDetalhes = base.ExibirDetalhes();

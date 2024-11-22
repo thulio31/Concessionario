@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core._02Repository.Interfaces
+namespace Core.Interfaces.Repository
 {
     public interface ICaminhaoRepository
     {

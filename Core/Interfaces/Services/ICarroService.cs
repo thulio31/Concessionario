@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core._02Repository.Interfaces
+namespace Core.Interfaces.Services
 {
-    public interface ICarroRepository
+    public interface ICarroService
     {
         void Adicionar(Carro carro);
-        List<Carro> Listar();
+        Carro BuscarPorId(int id);
         void Editar(Carro carro);
-        void Delete(int id);
-        Carro Buscar(int id);
+        List<Carro> Listar();
+        void Remover(int id);
     }
 }
