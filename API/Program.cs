@@ -1,4 +1,5 @@
 using Core._01Service;
+using Core._02Entidades;
 using Core.Data;
 using Core.Interfaces.Repository;
 using Core.Interfaces.Services;

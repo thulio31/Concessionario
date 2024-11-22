@@ -10,7 +10,7 @@ namespace Core.Interfaces.Services
     public interface ICarroService
     {
         void Adicionar(Carro carro);
-        Carro BuscarPorId(int id);
+        Carro BuscarCarroPorId(int id);
         void Editar(Carro carro);
         List<Carro> Listar();
         void Remover(int id);

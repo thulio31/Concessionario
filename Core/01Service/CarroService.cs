@@ -22,7 +22,7 @@ namespace Core._01Service
             repository.Adicionar(carro);
         }
 
-        public Carro BuscarPorId(int id)
+        public Carro BuscarCarroPorId(int id)
         {
             return repository.Buscar(id);
         }
@@ -39,7 +39,7 @@ namespace Core._01Service
 
         public void Remover(int id)
         {
-            repository.Delete(id);
+            repository.Remover(id);
         }
     }
 }

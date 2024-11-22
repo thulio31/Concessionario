@@ -36,18 +36,5 @@ namespace API.Controllers
             _service.Remover(id);
 
         }
-
-        /// <summary>
-        /// endpoit que edita um caminhao por id inserido
-        /// </summary>
-        /// <param name="caminhao"></param>
-        /// <returns></returns>
-        [HttpPut("Editar-Carro")]// Rota (EndPoint)
-        public void EditarCarro(Caminhao caminhao)
-        {
-
-            _service.Editar(caminhao);
-
-        }
     }
 }
